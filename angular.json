@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "lucatinderangular"
+    }
+  },
+  "defaultProject": "lucatinderangular",
+  "cli": {
+    "analytics": "e89f1bf9-a2d4-4d15-9df8-f6af72107e12"
+  }
 }
