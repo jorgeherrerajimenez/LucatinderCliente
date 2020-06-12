@@ -5,6 +5,7 @@ export class Perfil {
     public genero:String;
     public edad:Number;
     public descripcion:String;
+    
     constructor(id: Number, nombre: string, genero: string, edad: Number, descripcion: string){
         this.id = id;
         this.nombre = nombre;
