@@ -1,1 +1,24 @@
-<p>sugerencias works!</p>
+<div class="col-md-6">
+    <h2> User Details</h2>
+    
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let sugerencia of sugerencias">
+        <td class="hidden">{{sugerencia.id}}</td>
+        <td>{{sugerencia.nombre}}</td>
+        <td>{{sugerencia.edad}}</td>
+        <td>{{sugerencia.genero}}</td>
+        <td>{{sugerencia.descripcion}}</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>

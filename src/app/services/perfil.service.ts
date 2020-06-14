@@ -15,6 +15,12 @@ export class PerfilService {
     return this.http.get<Perfil[]>(this.perfilUrl);
   }
 
+  public getSugerencias(perfil:Perfil) {
+    //return this.http.get(this.perfilUrl + "/sugerencias/"+ perfil.id);
+    return this.http.get(this.perfilUrl + "/sugerencias/"+ 5);
+  }
+  
+
    //http://localhost:8080/user-portal/users/5
    public deleteUser(perfil:Perfil) {
     return this.http.delete(this.perfilUrl + "/"+ perfil.id);
