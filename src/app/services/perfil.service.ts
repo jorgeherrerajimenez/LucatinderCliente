@@ -10,19 +10,30 @@ export class PerfilService {
   constructor(private http:HttpClient) {}
 
   private perfilUrl = 'http://localhost:8080/rperfil';
-
-  public getPerfiles() {
-    return this.http.get<Perfil[]>(this.perfilUrl);
-  }
-
-  public getSugerencias(perfil:Perfil) {
-    //return this.http.get(this.perfilUrl + "/sugerencias/"+ perfil.id);
-    return this.http.get(this.perfilUrl + "/sugerencias/"+ 5);
-  }
   
 
-   //http://localhost:8080/user-portal/users/5
-   public deleteUser(perfil:Perfil) {
+  public getSugerencias(perfil:Perfil) {
+    return this.http.get<Perfil[]>(this.perfilUrl + "/sugerencias/" + perfil.id);
+  }
+
+
+  public getSugerencias(perfil:Perfil) {
+    return this.http.get<Perfil[]>(this.perfilUrl + "/sugerencias/" + perfil.id);
+  }
+  
+  public getContactos(perfil:Perfil) {
+    return this.http.get<Perfil[]>(this.perfilUrl + "/listaContactos/" + perfil.id);
+  }
+
+  public getDescartes(perfil:Perfil) {
+    return this.http.get<Perfil[]>(this.perfilUrl + "/listaDescartes/" + perfil.id);
+  }
+
+  public getMatches(perfil:Perfil) {
+    return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + perfil.id);
+  }
+
+  public deleteUser(perfil:Perfil) {
     return this.http.delete(this.perfilUrl + "/"+ perfil.id);
   }
 
