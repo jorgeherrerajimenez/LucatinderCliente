@@ -29,28 +29,26 @@ const routes: Routes = [
   component:RegistroComponent
 },
  
-{path: 'home',
+{path: 'home/:id',
   component:HomeComponent},
 
 {
-  path: 'sugerencias',
+  path: 'sugerencias/:id',
   component:SugerenciasComponent,
-  pathMatch: 'full'
 },
 
 {
-  path: 'contactos',
+  path: 'contactos/:id',
   component: ContactosComponent,
-  pathMatch: 'full'
 },
 
 {
-  path:'descartes',
+  path:'descartes/:id',
   component: DescartesComponent
 },
 
 {
-  path: 'matchs',
+  path: 'matchs/:id',
   component: MatchsComponent
 }
 

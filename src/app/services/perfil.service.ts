@@ -20,15 +20,15 @@ export class PerfilService {
     return this.http.get<Perfil[]>(this.perfilUrl + "/sugerencias/" + id);
   }
 
-  public getContactos(id:any) {
+  public getContactos(id:Number) {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaContactos/" + id);
   }
 
-  public getDescartes(perfil:Perfil) {
-    return this.http.get<Perfil[]>(this.perfilUrl + "/listaDescartes/" + perfil.id);
+  public getDescartes(id:Number) {
+    return this.http.get<Perfil[]>(this.perfilUrl + "/listaDescartes/" + id);
   }
-  public getMatches(perfil:Perfil) {
-    return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + perfil.id);
+  public getMatches(id:Number) {
+    return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + id);
   }
 
    //http://localhost:8080/user-portal/users/5
@@ -39,6 +39,14 @@ export class PerfilService {
 
   public createPerfil(perfil:Perfil) {
     return this.http.post<Perfil>(this.perfilUrl , perfil.id);
+  }
+
+  public findByUsername(username:String){
+    return this.http.get<Perfil>(this.perfilUrl + "/" + username);
+  }
+
+  public descartarSugerencia(idPropietario:Number, idSugerencia:Number) {
+    return this.http.post<Perfil>(this.perfilUrl + "/descartarSugerencia/" +idPropietario, new Perfil(idSugerencia,"---","-",0,""));
   }
 
 }

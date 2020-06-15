@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  private idPropietario:Number;
+
+  constructor(private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.idPropietario = +params['id'];
+    });
+  }
+
+  toSugerencias():void {
+    this.router.navigate(['/sugerencias',this.idPropietario]);
+  }
+
+  toContactos():void {
+    this.router.navigate(['/contactos',this.idPropietario]);
+  }
+
+  toDescartes():void {
+    this.router.navigate(['/descartes',this.idPropietario]);
+  }
+
+  toMatchs(){
+    this.router.navigate(['/matchs',this.idPropietario]);
   }
 
 }

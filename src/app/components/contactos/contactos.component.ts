@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PerfilService  } from "../../services/perfil.service";
 import { Perfil } from '../../model/perfil';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contactos',
@@ -15,17 +14,18 @@ import { Router } from '@angular/router';
 export class ContactosComponent implements OnInit {
 
   contactos: Perfil[];
-  perfil : Perfil;
+  idPropietario:Number;
 
-  constructor(private router: Router, private perfilService: PerfilService) { }
+  constructor(private route: ActivatedRoute, private perfilService: PerfilService) { }
 
   ngOnInit(): void {
-    this.perfilService. getContactos(17).
-    subscribe(data => {
+    this.route.params.subscribe(params => {
+      this.idPropietario = +params['id'];
+    });
+    this.perfilService.getContactos(this.idPropietario).subscribe(data => {
       this.contactos = data;
-      console.log(this.contactos)
-  });
+    });
+  }
 
 }
 
-}
