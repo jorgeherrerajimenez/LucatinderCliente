@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { PerfilService } from 'src/app/services/perfil.service';
+import { ActivatedRoute } from '@angular/router';
+import { Perfil } from 'src/app/model/perfil'
 
 @Component({
   selector: 'app-descartes',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DescartesComponent implements OnInit {
 
-  constructor() { }
+  private idPropietario:Number;
+  listaDescartes:Perfil[];
+
+  constructor(private perfilService:PerfilService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.idPropietario = +params['id'];
+    });
+    this.perfilService.getDescartes(this.idPropietario).subscribe(data => {
+      this.listaDescartes = data;
+    });
   }
 
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LoginService } from '../../services/login.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { PerfilService } from '../../services/perfil.service';
 import { Perfil } from '../../model/perfil';
 
@@ -12,11 +12,25 @@ import { Perfil } from '../../model/perfil';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private perfilService: PerfilService) { }
+  userName:String;
+
+  constructor(private perfilService: PerfilService, 
+            private router:Router,
+            private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.perfilService.getContactos(11);
     console.log(this.perfilService.getContactos(11))
+  }
+
+  onSubmit(): void {
+    console.log(this.userName);
+    this.perfilService.findByUsername(this.userName).subscribe(result => this.goToDescartes(+result.id));
+  }
+
+  goToDescartes(id:Number): void {
+    console.log(id)
+    this.router.navigate(['/home',id]);
   }
 
 }

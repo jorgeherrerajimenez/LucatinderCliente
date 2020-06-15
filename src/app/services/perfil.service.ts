@@ -24,8 +24,8 @@ export class PerfilService {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaContactos/" + id);
   }
 
-  public getDescartes(perfil:Perfil) {
-    return this.http.get<Perfil[]>(this.perfilUrl + "/listaDescartes/" + perfil.id);
+  public getDescartes(id:Number) {
+    return this.http.get<Perfil[]>(this.perfilUrl + "/listaDescartes/" + id);
   }
   public getMatches(id:any) {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + id);
@@ -39,6 +39,10 @@ export class PerfilService {
 
   public createPerfil(perfil:Perfil) {
     return this.http.post<Perfil>(this.perfilUrl , perfil.id);
+  }
+
+  public findByUsername(username:String){
+    return this.http.get<Perfil>(this.perfilUrl + "/" + username);
   }
 
 }
