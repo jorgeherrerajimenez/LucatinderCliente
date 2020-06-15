@@ -7,8 +7,6 @@ export class Perfil {
     public genero:String;
     public edad:Number;
     public descripcion:String;
-
     
     
 }
-

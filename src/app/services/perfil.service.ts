@@ -17,8 +17,8 @@ export class PerfilService {
 
   private perfilUrl = 'http://localhost:8080/rperfil';
   
-  public getSugerencias(perfil:Perfil) {
-    return this.http.get<Perfil[]>(this.perfilUrl + "/sugerencias/" + perfil.id);
+  public getSugerencias(id:any) {
+    return this.http.get<Perfil[]>(this.perfilUrl + "/sugerencias/" + id);
   }
 
   public getContactos(id:Number) {
