@@ -34,12 +34,14 @@ const routes: Routes = [
 
 {
   path: 'sugerencias',
-  component:SugerenciasComponent
+  component:SugerenciasComponent,
+  pathMatch: 'full'
 },
 
 {
   path: 'contactos',
-  component: ContactosComponent
+  component: ContactosComponent,
+  pathMatch: 'full'
 },
 
 {

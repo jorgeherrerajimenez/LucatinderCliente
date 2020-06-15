@@ -12,9 +12,11 @@ import { Perfil } from '../../model/perfil';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private perfilService: PerfilService) { }
 
   ngOnInit(): void {
+    this.perfilService.getContactos(11);
+    console.log(this.perfilService.getContactos(11))
   }
 
 }
