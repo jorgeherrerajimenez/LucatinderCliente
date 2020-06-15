@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HttpClientModule} from "@angular/common/http";
 
@@ -12,6 +13,8 @@ import { SugerenciasComponent } from './components/sugerencias/sugerencias.compo
 import { ContactosComponent } from './components/contactos/contactos.component';
 import { DescartesComponent } from './components/descartes/descartes.component';
 import { MatchsComponent } from './components/matchs/matchs.component';
+
+import { PerfilService } from './services/perfil.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +31,8 @@ import { MatchsComponent } from './components/matchs/matchs.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
-    
   ],
-  providers: [],
+  providers: [PerfilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
