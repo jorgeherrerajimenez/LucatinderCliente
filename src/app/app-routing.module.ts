@@ -34,7 +34,8 @@ const routes: Routes = [
 
 {
   path: 'sugerencias',
-  component:SugerenciasComponent
+  component:SugerenciasComponent,
+  pathMatch: 'full'
 },
 
 {
