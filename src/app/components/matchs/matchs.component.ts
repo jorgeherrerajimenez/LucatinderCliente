@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { PerfilService  } from "../../services/perfil.service";
 import { Perfil } from '../../model/perfil';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-matchs',
@@ -13,16 +13,16 @@ import { Router } from '@angular/router';
 export class MatchsComponent implements OnInit {
 
   matches: Perfil[];
-  perfil : Perfil;
+  idPropietario: Number;
 
-  constructor(private router: Router, private perfilService: PerfilService) { }
+  constructor(private route: ActivatedRoute, private perfilService: PerfilService) { }
 
   ngOnInit(): void {
-    this.perfilService. getContactos(7).
-    subscribe(data => {
+    this.route.params.subscribe(params => {
+      this.idPropietario = +params['id'];
+    });
+    this.perfilService.getMatches(this.idPropietario).subscribe(data => {
       this.matches = data;
-      console.log(this.matches)
-  });
-
-}
+    });
+  }
 }
