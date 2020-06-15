@@ -1,24 +1,75 @@
-<div class="col-md-6">
-    <h2> User Details</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sugerencias</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th class="hidden">Id</th>
-        <th>FirstName</th>
-        <th>LastName</th>
-        <th>Email</th>
-        <th>Action</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let sugerencia of sugerencias">
-        <td class="hidden">{{sugerencia.id}}</td>
-        <td>{{sugerencia.nombre}}</td>
-        <td>{{sugerencia.edad}}</td>
-        <td>{{sugerencia.genero}}</td>
-        <td>{{sugerencia.descripcion}}</td>
-      </tr>
-      </tbody>
-    </table>
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/animate/animate.css">	
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+    
+
+</head>
+
+<body>
+
+    <!-- Menú-->
+
+    <nav class="navbar navbar-light bg-dark">
+        <a class="navbar-brand" href="#">
+            <img class="pl-5" src="/assets/images/logopekeblanco.png" alt="logoimage">
+        </a>
+        <a class="navbar-brand" style="color:white" href="/perfil/main">
+            Atrás <div><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></div>
+        </a>
+    </nav>
+
+    <!-- Menú-->
+
+
+    <!-- cuadrado blanco principal-->
+    <div class="limiter">
+        <div class="container-login100">
+
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50" *ngFor="let perfil of sugerencias">
+                <img class="card-img-top img-thumbnail" src="/assets/images/usericon.png" alt="Image Icon">
+                <div class="card-body">
+                    <h5 class="card-title">{{perfil.nombre}}</h5>
+                    <p class="card-text">{{perfil.descripcion}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    Edad: <li class="list-group-item" style="background-color:azure">{{perfil.edad}}</li>
+                    Género: <li class="list-group-item" style="background-color:azure">{{perfil.genero}}</li>
+                </ul>
+                <div class="card-body">
+                     <a href="" class="card-link" style="color:limegreen"><i class="pl-3 fa fa-heart fa-2x" aria-hidden="true"></i></a>
+                    <a href="" class="card-link" style="color:red"><i class="pl-3 fa fa-times fa-2x" aria-hidden="true"></i></a>
+                </div>
+
+            </div>
+        </div>
     </div>
+
+    
+    <!-- cuadrado blanco principal -->
+    
+
+  <script src="/assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="/assets/vendor/animsition/js/animsition.min.js"></script>
+	<script src="/assets/vendor/bootstrap/js/popper.js"></script>
+	<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/vendor/select2/select2.min.js"></script>
+	<script src="/assets/vendor/daterangepicker/moment.min.js"></script>
+	<script src="/assets/vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="/assets/vendor/countdowntime/countdowntime.js"></script>
+	<script src="/assets/js/main.js"></script>
+
+</body></html>

@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Perfil } from 'src/app/model/perfil';
-import { PerfilService } from 'src/app/services/perfil.service';
-import { HttpClientModule} from "@angular/common/http";
-//Nuevo
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { PerfilService  } from "../../services/perfil.service";
+import { Perfil } from '../../model/perfil';
 import { Router } from '@angular/router';
-
-
 
 @Component({
   selector: 'app-sugerencias',
   templateUrl: './sugerencias.component.html',
-  styleUrls: ['./sugerencias.component.css']
+  styleUrls: ['./sugerencias.component.css'],
+  providers: [PerfilService]
 })
+
 export class SugerenciasComponent implements OnInit {
   
   sugerencias:Perfil[];
@@ -21,12 +21,13 @@ export class SugerenciasComponent implements OnInit {
   
   
   ngOnInit(): void {
-    this.perfilService.getSugerencias(this.perfil)
+    this.perfilService. getSugerencias(14).
+    subscribe(data => {
+      this.sugerencias = data;
+      console.log(this.sugerencias)
+  });
 
-      .subscribe(params => data => {
-        this.sugerencias = data;
-      });
-  };
+}
 
 }
 
