@@ -30,12 +30,12 @@ export class PerfilService {
 
 
    //http://localhost:8080/user-portal/users/5
-   public deleteUser(perfil:Perfil) {
+   public deletePerfil(perfil:Perfil) {
     return this.http.delete(this.perfilUrl + "/"+ perfil.id);
   }
 
-  public createUser(perfil:Perfil) {
-    return this.http.post<Perfil>(this.perfilUrl, perfil);
+  public createPerfil(perfil:Perfil) {
+    return this.http.post<Perfil>(this.perfilUrl + "/add/", perfil);
   }
 
 }

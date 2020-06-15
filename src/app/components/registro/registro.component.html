@@ -1,1 +1,20 @@
-<p>registro works!</p>
+<div class="col-md-6">
+<h2 class="text-center">Add User</h2>
+<form>
+
+    <label for="nombre">Nombre</label>
+    <input type="text" [(ngModel)]="perfil.nombre" placeholder="Nombre" id="nombre"> 
+
+    <label for="edad">Edad</label>
+    <input type="text" [(ngModel)]="perfil.edad" placeholder="Edad" id="edad"> 
+
+    <label for="genero">Género</label>
+    <input type="text" [(ngModel)]="perfil.genero" placeholder="Genero" id="genero"> 
+
+    <label for="descripcion">Descripción</label>
+    <input type="text" [(ngModel)]="perfil.descripcion" placeholder="Descripcion" id="descripcion"> 
+
+    <button type="submit" class="btn btn-success" (click)="createPerfil()">Registrar usuario</button>
+
+</form>
+</div>

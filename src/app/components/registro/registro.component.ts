@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Perfil } from 'src/app/model/perfil';
+import { PerfilService } from '../../services/perfil.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
+  perfil: Perfil = new Perfil();
+
+  constructor(private perfilService: PerfilService,
+              private router: Router
+              ) { }
+
+
+  createPerfil() {
+    this.perfilService.createPerfil(this.perfil)
+    .subscribe(data=> {alert("Usuario generado de forma correcta");})
+  };
+
 
   ngOnInit(): void {
+
+   
   }
 
 }
