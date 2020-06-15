@@ -20,14 +20,14 @@ export class PerfilService {
     return this.http.get<Perfil[]>(this.perfilUrl + "/sugerencias/" + perfil.id);
   }
 
-  public getContactos(id:any) {
+  public getContactos(id:Number) {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaContactos/" + id);
   }
 
   public getDescartes(id:Number) {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaDescartes/" + id);
   }
-  public getMatches(id:any) {
+  public getMatches(id:Number) {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + id);
   }
 
