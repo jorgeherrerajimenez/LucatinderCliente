@@ -28,6 +28,17 @@
     </div>
 
     <div class="form-group">
+        <label for="usuario">Usuario</label>
+        <input type="text" [(ngModel)]="perfil.username" formControlName="username" id="usuario"> 
+        <div *ngIf="angForm.controls['username'].errors.required"></div>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="text" [(ngModel)]="perfil.password" formControlName="password" id="password"> 
+        </div>
+
+    <div class="form-group">
     <label for="descripcion">Descripción</label>
     <input type="text" [(ngModel)]="perfil.descripcion" formControlName="descripcion" id="descripcion"> 
     </div>

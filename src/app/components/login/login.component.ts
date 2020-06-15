@@ -20,7 +20,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.perfilService.getContactos(11);
-    console.log(this.perfilService.getContactos(11))
+    console.log(this.perfilService.getContactos(11))}
+
+
 
   onSubmit(): void {
     this.perfilService.findByUsername(this.userName).subscribe(result => this.goToHome(+result.id));
@@ -31,4 +33,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
-}
+

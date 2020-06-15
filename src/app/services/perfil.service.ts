@@ -46,7 +46,7 @@ export class PerfilService {
   }
 
   public descartarSugerencia(idPropietario:Number, idSugerencia:Number) {
-    return this.http.post<Perfil>(this.perfilUrl + "/descartarSugerencia/" +idPropietario, new Perfil(idSugerencia,"---","-",0,""));
+    return this.http.post<Perfil>(this.perfilUrl + "/descartarSugerencia/" +idPropietario, new Perfil());
   }
 
 }

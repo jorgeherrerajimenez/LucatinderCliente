@@ -34,6 +34,8 @@ createForm(perfil: Perfil){
       nombre: [this.perfil.nombre, [Validators.required, Validators.minLength(3)]],
       genero: [this.perfil.genero, Validators.required],
       edad: [this.perfil.edad, [Validators.required, Validators.min(18)]],
+      usuario: [this.perfil.username, [Validators.required, Validators.minLength(3)]],
+      password:[this.perfil.password, Validators.required],
       descripcion:[this.perfil.descripcion]
     });
   }
