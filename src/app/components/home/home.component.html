@@ -7,10 +7,53 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 
+  <nav class="navbar navbar-light bg-dark">
+    <a class="navbar-brand" href="/logout">
+        <img class="pl-5" src="assets/images/logopekeblanco.png" alt="logoimage">
+    </a>
+    <a class="navbar-brand" style="color:white" href="/logout">
+        Cerrar Sesion <div><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></div>
+    </a>
+</nav>
+<!-- Menú-->
+<div class="limiter">
+<div class="container-login100">
+<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+  <span class="login100-form-title p-b-33">
+      ¿QUÉ DESEA?
+  </span>
 
-<nav class="nav">
-    <a class="nav-link" (click)="toSugerencias()">SUGERENCIAS</a>
-    <a class="nav-link" (click)="toMatchs()">MATCH</a>
-    <a class="nav-link" (click)="toContactos()">CONTACTOS</a>
-    <a class="nav-link" (click)="toDescartes()">DESCARTES</a>
-  </nav>
+  <div class="container-login100-form-btn m-t-20">
+    <a (click)="toSugerencias()" class="login100-form-btn">
+      <button class="login100-form-btn">
+        Sugerencias <i class="pl-3 fa fa-search fa-2x" aria-hidden="true"></i>
+      </button>
+      </a>
+    </div>
+
+    <div class="container-login100-form-btn m-t-20">
+      <a (click)="toMatchs()" class="login100-form-btn">
+        <button class="login100-form-btn">
+          Match <i class="pl-3 fa fa-venus-mars fa-2x" aria-hidden="true"></i>
+        </button>
+      </a>
+    </div>
+
+    <div class="container-login100-form-btn m-t-20">
+      <a (click)="toContactos()" class="login100-form-btn">
+        <button class="login100-form-btn">
+          Contactos<i class="pl-3 fa fa-heart fa-2x" aria-hidden="true"></i>
+        </button>
+      </a>
+    </div>
+
+    <div class="container-login100-form-btn m-t-20">
+      <a (click)="toDescartes()" class="login100-form-btn">
+        <button class="login100-form-btn">
+          Descartados <i class="pl-3 fa fa-times fa-2x" aria-hidden="true"></i>
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+</div>
