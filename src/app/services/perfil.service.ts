@@ -15,9 +15,9 @@ export class PerfilService {
     return this.http.get<Perfil[]>(this.perfilUrl);
   }
 
-  public getSugerencias(perfil:Perfil) {
+  public getSugerencias(id:any) {
     //return this.http.get(this.perfilUrl + "/sugerencias/"+ perfil.id);
-    return this.http.get(this.perfilUrl + "/sugerencias/"+ 5);
+    return this.http.get(this.perfilUrl + "/sugerencias/"+ id);
   }
   
 
