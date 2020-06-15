@@ -24,10 +24,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.perfilService.findByUsername(this.userName).subscribe(result => this.goToDescartes(+result.id));
+    this.perfilService.findByUsername(this.userName).subscribe(result => this.goToHome(+result.id));
   }
 
-  goToDescartes(id:Number): void {
+  goToHome(id:Number): void {
     this.router.navigate(['/home',id]);
   }
 
