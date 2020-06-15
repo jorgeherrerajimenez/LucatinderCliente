@@ -27,8 +27,8 @@ export class PerfilService {
   public getDescartes(id:Number) {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaDescartes/" + id);
   }
-  public getMatches(perfil:Perfil) {
-    return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + perfil.id);
+  public getMatches(id:any) {
+    return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + id);
   }
 
    //http://localhost:8080/user-portal/users/5

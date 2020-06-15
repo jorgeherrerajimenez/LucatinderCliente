@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PerfilService  } from "../../services/perfil.service";
 import { Perfil } from '../../model/perfil';
 import { Router } from '@angular/router';
@@ -20,7 +19,7 @@ export class ContactosComponent implements OnInit {
   constructor(private router: Router, private perfilService: PerfilService) { }
 
   ngOnInit(): void {
-    this.perfilService. getContactos(5).
+    this.perfilService. getContactos(8).
     subscribe(data => {
       this.contactos = data;
       console.log(this.contactos)
