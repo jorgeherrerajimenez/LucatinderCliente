@@ -45,12 +45,12 @@ const routes: Routes = [
 },
 
 {
-  path:'descartes',
+  path:'descarte/:id',
   component: DescartesComponent
 },
 
 {
-  path: 'matchs',
+  path: 'matchs/:id',
   component: MatchsComponent
 }
 
