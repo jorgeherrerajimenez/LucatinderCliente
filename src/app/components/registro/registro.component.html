@@ -1,20 +1,39 @@
-<div class="col-md-6">
-<h2 class="text-center">Add User</h2>
-<form>
+<p>registro works!</p>
 
+<div class="col-md-6"> 
+<h2 class="text-center">Alta de usuarios</h2>
+<form [formGroup]="angForm" novalidate>
+    <div class="form-group">
     <label for="nombre">Nombre</label>
-    <input type="text" [(ngModel)]="perfil.nombre" placeholder="Nombre" id="nombre"> 
+    <input type="text" [(ngModel)]="perfil.nombre" formControlName="nombre" id="nombre"> 
+    <div *ngIf="angForm.controls['nombre'].invalid"> 
+        <div *ngIf="angForm.controls['nombre'].errors.required">
+            Introduce un nombre válido
+        </div>
+    </div>
+    </div>
 
+    <div class="form-group">
     <label for="edad">Edad</label>
-    <input type="text" [(ngModel)]="perfil.edad" placeholder="Edad" id="edad"> 
+    <input type="number" [(ngModel)]="perfil.edad" formControlName="edad" id="edad"> 
+    
+        <div *ngIf="angForm.controls['edad'].hasError('min')">
+            Introduce una edad correcta
+        </div>
+    </div>
 
+    <div class="form-group">
     <label for="genero">Género</label>
-    <input type="text" [(ngModel)]="perfil.genero" placeholder="Genero" id="genero"> 
+    <input type="text" [(ngModel)]="perfil.genero" formControlName="genero" id="genero"> 
+    </div>
 
+    <div class="form-group">
     <label for="descripcion">Descripción</label>
-    <input type="text" [(ngModel)]="perfil.descripcion" placeholder="Descripcion" id="descripcion"> 
+    <input type="text" [(ngModel)]="perfil.descripcion" formControlName="descripcion" id="descripcion"> 
+    </div>
 
-    <button type="submit" class="btn btn-success" (click)="createPerfil()">Registrar usuario</button>
+    <button [disabled]="angForm.invalid"  (click)="createPerfil()" class="btn btn-success" >Registrar usuario</button>
 
 </form>
 </div>
+

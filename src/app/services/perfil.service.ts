@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { Perfil } from '../model/perfil';
 
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -36,8 +37,8 @@ export class PerfilService {
     return this.http.delete(this.perfilUrl + "/"+ perfil.id);
   }
 
-  public createPerfil(perfil:Perfil) {
-    return this.http.post<Perfil>(this.perfilUrl + "/add/", perfil);
+  public createPerfil(perfil:Perfil){
+    return this.http.post<Perfil>(this.perfilUrl + "/add", perfil);
   }
 
 }

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ValueProvider } from '@angular/core';
 import { Perfil } from 'src/app/model/perfil';
 import { PerfilService } from '../../services/perfil.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-registro',
@@ -10,22 +12,39 @@ import { Router } from '@angular/router';
 })
 export class RegistroComponent implements OnInit {
 
-  perfil: Perfil = new Perfil();
+angForm: FormGroup;
+perfil: Perfil = new Perfil();
 
-  constructor(private perfilService: PerfilService,
-              private router: Router
-              ) { }
+constructor(private fb: FormBuilder,
+            private perfilService: PerfilService,
+            private router: Router) { 
+              
+              this.createForm(this.perfil);
+           }
 
+ngOnInit(): void {}
 
-  createPerfil() {
-    this.perfilService.createPerfil(this.perfil)
-    .subscribe(data=> {alert("Usuario generado de forma correcta");})
-  };
+gotoLogin() {
+this.router.navigate(['/login']);
+}
 
+createForm(perfil: Perfil){
 
-  ngOnInit(): void {
-
-   
+    this.angForm = this.fb.group({
+      nombre: [this.perfil.nombre, [Validators.required, Validators.minLength(3)]],
+      genero: [this.perfil.genero, Validators.required],
+      edad: [this.perfil.edad, [Validators.required, Validators.min(18)]],
+      descripcion:[this.perfil.descripcion]
+    });
   }
 
+              
+createPerfil() {
+this.perfilService.createPerfil(this.perfil)
+.subscribe(data=> {alert("Usuario generado de forma correcta");}, result=> this.gotoLogin())
 }
+              
+}
+
+
+
