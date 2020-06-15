@@ -10,12 +10,12 @@ export class PerfilService {
   constructor(private http:HttpClient) {}
 
   private perfilUrl = 'http://localhost:8080/rperfil';
-  
+
 
   public getSugerencias(perfil:Perfil) {
     return this.http.get<Perfil[]>(this.perfilUrl + "/sugerencias/" + perfil.id);
   }
-
+  
   public getContactos(perfil:Perfil) {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaContactos/" + perfil.id);
   }
@@ -28,9 +28,7 @@ export class PerfilService {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + perfil.id);
   }
 
-
-   //http://localhost:8080/user-portal/users/5
-   public deleteUser(perfil:Perfil) {
+  public deleteUser(perfil:Perfil) {
     return this.http.delete(this.perfilUrl + "/"+ perfil.id);
   }
 
