@@ -20,7 +20,7 @@ export class ContactosComponent implements OnInit {
   constructor(private router: Router, private perfilService: PerfilService) { }
 
   ngOnInit(): void {
-    this.perfilService. getContactos(5).
+    this.perfilService. getContactos(17).
     subscribe(data => {
       this.contactos = data;
       console.log(this.contactos)

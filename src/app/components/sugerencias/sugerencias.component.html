@@ -1,5 +1,5 @@
 <div class="col-md-6">
-    <h2> User Details</h2>
+    <h2> Sugerencias</h2>
     
     <table class="table table-striped">
       <thead>
@@ -12,13 +12,13 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let sugerencia of sugerencias">
-        <td class="hidden">{{sugerencia.id}}</td>
-        <td>{{sugerencia.nombre}}</td>
-        <td>{{sugerencia.edad}}</td>
-        <td>{{sugerencia.genero}}</td>
-        <td>{{sugerencia.descripcion}}</td>
-      </tr>
+        <tr *ngFor="let perfil of sugerencias">
+          <td class="hidden">{{perfil.id}}</td>
+          <td>{{perfil.nombre}}</td>
+          <td>{{perfil.descripcion}}</td>
+          <td>{{perfil.edad}}</td>
+          <td>{{perfil.genero}}</td>
+        </tr>
       </tbody>
     </table>
     </div>
