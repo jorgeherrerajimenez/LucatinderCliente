@@ -40,7 +40,8 @@ const routes: Routes = [
 
 {
   path: 'contactos',
-  component: ContactosComponent
+  component: ContactosComponent,
+  pathMatch: 'full'
 },
 
 {
