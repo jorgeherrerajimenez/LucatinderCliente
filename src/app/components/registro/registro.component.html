@@ -1,9 +1,18 @@
-<p>registro works!</p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------  ---------->
+
 
 <div class="col-md-6"> 
+    <div class="fadeIn first">
+    <img src="/assets/img/lucatinderlogo6.png" id="logo" alt="Logo Lucatinder" />
+    </div>
+
 <h2 class="text-center">Alta de usuarios</h2>
 <form [formGroup]="angForm" novalidate>
-    <div class="form-group">
+
+    <div class="form-group" id="formContent">
     <label for="nombre">Nombre</label>
     <input type="text" [(ngModel)]="perfil.nombre" formControlName="nombre" id="nombre"> 
     <div *ngIf="angForm.controls['nombre'].invalid"> 
@@ -13,7 +22,7 @@
     </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" id="formContent">
     <label for="edad">Edad</label>
     <input type="number" [(ngModel)]="perfil.edad" formControlName="edad" id="edad"> 
     
@@ -22,29 +31,24 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" id="formContent">
     <label for="genero">Género</label>
     <input type="text" [(ngModel)]="perfil.genero" formControlName="genero" id="genero"> 
     </div>
 
-    <div class="form-group">
-        <label for="usuario">Usuario</label>
-        <input type="text" [(ngModel)]="perfil.username" formControlName="username" id="usuario"> 
-        <div *ngIf="angForm.controls['username'].errors.required"></div>
-    </div>
-
-    <div class="form-group">
-        <label for="password">Contraseña</label>
-        <input type="text" [(ngModel)]="perfil.password" formControlName="password" id="password"> 
-        </div>
-
-    <div class="form-group">
+  
+    <div class="form-group" id="formContent">
     <label for="descripcion">Descripción</label>
     <input type="text" [(ngModel)]="perfil.descripcion" formControlName="descripcion" id="descripcion"> 
     </div>
+ 
+    <button [disabled]="angForm.invalid"  (click)="createPerfil()" class="btn btn-success" routerLink="/login">Registrar usuario</button>
 
-    <button [disabled]="angForm.invalid"  (click)="createPerfil()" class="btn btn-success" >Registrar usuario</button>
-
+    <div class="fadeIn first">
+        <img src="/assets/img/poweredbyangular2.png" id="logoangular" alt="Logo Angular" />
+    </div>
 </form>
+
 </div>
+
 
