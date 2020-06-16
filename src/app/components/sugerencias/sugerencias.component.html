@@ -50,8 +50,8 @@
                     Género: <li class="list-group-item" style="background-color:azure">{{perfil.genero}}</li>
                 </ul>
                 <div class="card-body">
-                     <a href="" class="card-link" style="color:limegreen"><i class="pl-3 fa fa-heart fa-2x" aria-hidden="true"></i></a>
-                    <a href="" class="card-link" style="color:red"><i class="pl-3 fa fa-times fa-2x" aria-hidden="true"></i></a>
+                    <a (click)="aceptar(perfil)" class="card-link" style="color:limegreen"><i class="pl-3 fa fa-heart fa-2x" aria-hidden="true"></i></a>
+                    <a (click)="descartar(perfil)" class="card-link" style="color:red"><i class="pl-3 fa fa-times fa-2x" aria-hidden="true"></i></a>
                 </div>
 
             </div>
