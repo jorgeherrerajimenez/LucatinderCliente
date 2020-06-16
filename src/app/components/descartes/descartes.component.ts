@@ -10,7 +10,7 @@ import { Perfil } from 'src/app/model/perfil'
 })
 export class DescartesComponent implements OnInit {
 
-  private idPropietario:Number;
+  idPropietario:Number;
   listaDescartes:Perfil[];
 
   constructor(private perfilService:PerfilService, private route:ActivatedRoute) { }
