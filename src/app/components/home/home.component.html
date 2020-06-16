@@ -14,63 +14,107 @@
 	<link rel="stylesheet" type="text/css" href="/assets/vendor/select2/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="/assets/vendor/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" type="text/css" href="/assets/css/util.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+  
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
     
 
 </head>
 
 <body>
 
-  <nav class="navbar navbar-light bg-dark">
+
+<nav class="navbar navbar-light bg-dark">
     <a class="navbar-brand" href="/logout">
-        <img class="pl-5" src="assets/images/logopekeblanco.png" alt="logoimage">
+    <img class="pl-5" src="assets/images/logopekeblanco.png" alt="logoimage">
     </a>
     <a class="navbar-brand" style="color:white" href="/logout">
         Cerrar Sesion <div><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i></div>
     </a>
 </nav>
+
+
+
+
+
 <!-- Menú-->
+
+
+
+
+<!------------------ Hover Effect Style : Demo - 7 --------------->
+
+
 <div class="limiter">
-<div class="container-login100">
-<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-  <span class="login100-form-title p-b-33">
-      ¿QUÉ DESEA?
-  </span>
+  <div class="container-login100">
+    
 
-  <div class="container-login100-form-btn m-t-20">
-    <a (click)="toSugerencias()" class="login100-form-btn">
-      <button class="login100-form-btn">
-        Sugerencias <i class="pl-3 fa fa-search fa-2x" aria-hidden="true"></i>
-      </button>
-      </a>
+
+    <div class="container mt-40">
+      <h3 class="text-center">Bienvenido, eliga sus opciones</h3>
+      <div class="row mt-30">
+          <div class="col-md-6 col-sm-4">
+              <div class="box7">
+                  <img  src="/assets/images/sugestionsicon.PNG" alt="">
+                  <div class="box-content">
+                      <h3 class="title">Sugerencias</h3>
+                      <ul class="icon">
+                          <li><a href="#" class="fa fa-search"></a></li>
+                          <li><a href="#" class="fa fa-link"></a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-sm-4">
+              <div class="box7">
+                  <img  src="/assets/images/contacticon.PNG" alt="">
+                  <div class="box-content">
+                      <h3 class="title">Contactos</h3>
+                      <ul class="icon">
+                          <li><a href="#" class="fa fa-search"></a></li>
+                          <li><a href="#" class="fa fa-link"></a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-sm-4">
+              <div class="box7">
+                  <img  src="/assets/images/matchicon.PNG" alt="">
+                  <div class="box-content">
+                      <h3 class="title">Matchs</h3>
+                      <ul class="icon">
+                          <li><a href="#" class="fa fa-search"></a></li>
+                          <li><a href="#" class="fa fa-link"></a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6 col-sm-4">
+            <div class="box7">
+                <img src="/assets/images/discardsicon.PNG"alt="">
+                <div class="box-content">
+                    <h3 class="title">Descartes</h3>
+                    <ul class="icon">
+                        <li><a href="#" class="fa fa-search"></a></li>
+                        <li><a href="#" class="fa fa-link"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
     </div>
 
-    <div class="container-login100-form-btn m-t-20">
-      <a (click)="toMatchs()" class="login100-form-btn">
-        <button class="login100-form-btn">
-          Match <i class="pl-3 fa fa-venus-mars fa-2x" aria-hidden="true"></i>
-        </button>
-      </a>
-    </div>
 
-    <div class="container-login100-form-btn m-t-20">
-      <a (click)="toContactos()" class="login100-form-btn">
-        <button class="login100-form-btn">
-          Contactos<i class="pl-3 fa fa-heart fa-2x" aria-hidden="true"></i>
-        </button>
-      </a>
-    </div>
 
-    <div class="container-login100-form-btn m-t-20">
-      <a (click)="toDescartes()" class="login100-form-btn">
-        <button class="login100-form-btn">
-          Descartados <i class="pl-3 fa fa-times fa-2x" aria-hidden="true"></i>
-        </button>
-      </a>
+
+
+
     </div>
   </div>
-</div>
-</div>
+
 
 <script src="/assets/vendor/jquery/jquery-3.2.1.min.js"></script>
 	<script src="/assets/vendor/animsition/js/animsition.min.js"></script>
