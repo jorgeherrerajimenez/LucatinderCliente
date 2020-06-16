@@ -32,6 +32,7 @@ createForm(perfil: Perfil){
 
     this.angForm = this.fb.group({
       nombre: [this.perfil.nombre, [Validators.required, Validators.minLength(3)]],
+      username: [this.perfil.username],
       genero: [this.perfil.genero, Validators.required],
       edad: [this.perfil.edad, [Validators.required, Validators.min(18)]],
       descripcion:[this.perfil.descripcion]
@@ -41,7 +42,7 @@ createForm(perfil: Perfil){
               
 createPerfil() {
 this.perfilService.createPerfil(this.perfil)
-.subscribe(data=> {alert("Usuario generado de forma correcta");}, result=> this.gotoLogin())
+.subscribe(data=> {alert("Usuario generado de forma correcta");})
 }
               
 }
