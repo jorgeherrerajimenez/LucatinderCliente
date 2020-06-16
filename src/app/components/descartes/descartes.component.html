@@ -1,19 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>descartes</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/animate/animate.css">	
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+    
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
  <!-- Menú-->
+
  <nav class="navbar navbar-light bg-dark">
   <a class="navbar-brand" href="#">
       <img class="pl-5" src="assets/images/logopekeblanco.png" alt="logoimage">
   </a>
-  <a class="navbar-brand" style="color:white" href="/perfil/main">
+  <a class="navbar-brand" style="color:white" href="/home/{{idPropietario}}">
       Atrás <div><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></div>
   </a>
 </nav>
+
 <!-- cuadrado blanco principal-->
 <div class="limiter">
   <div class="container-login100">
+
       <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50" *ngFor="let perfil of listaDescartes">
           <img class="card-img-top img-thumbnail" src="assets/images/usericon.png" alt="Image Icon">
           <div class="card-body">
@@ -24,5 +46,25 @@
               Edad: <li class="list-group-item" style="background-color:azure">{{perfil.edad}}</li>
               Género: <li class="list-group-item" style="background-color:azure">{{perfil.genero}}</li>
           </ul>
+
       </div>
   </div>
+</div>
+<!-- cuadrado blanco principal -->
+
+
+<script src="/assets/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="/assets/vendor/animsition/js/animsition.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/popper.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/vendor/select2/select2.min.js"></script>
+<script src="/assets/vendor/daterangepicker/moment.min.js"></script>
+<script src="/assets/vendor/daterangepicker/daterangepicker.js"></script>
+<script src="/assets/vendor/countdowntime/countdowntime.js"></script>
+<script src="/assets/js/main.js"></script>
+
+</body></html>
+
+
+
+  
