@@ -16,10 +16,6 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/util.css">
   <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
   
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
     
 
 </head>
@@ -36,11 +32,7 @@
 </nav>
 
 
-
-
 <!-- Menú-->
-
-
 
 
 <!------------------ Hover Effect Style : Demo - 7 --------------->
@@ -52,8 +44,11 @@
 
 
     <div class="container mt-40">
-      <h3 class="text-center">Bienvenido, eliga sus opciones</h3>
-      <div class="row mt-30">
+        <h3 class="text-center">
+            <span *ngIf='perfil.genero==="H"'>BIENVENIDO</span>
+            <span *ngIf='perfil.genero==="M"'>BIENVENIDA</span>
+            {{perfil.nombre}} </h3>
+        <div class="row mt-30"> 
           <div class="col-md-6 col-sm-4">
               <div class="box7">
                   <img  src="/assets/images/sugestionsicon.PNG" alt="">
