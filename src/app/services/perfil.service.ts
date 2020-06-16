@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { Perfil } from '../model/perfil';
+import { Observable } from 'rxjs';
+import { stringify } from 'querystring';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -45,8 +47,12 @@ export class PerfilService {
     return this.http.get<Perfil>(this.perfilUrl + "/" + username);
   }
 
-  public descartarSugerencia(idPropietario:Number, idSugerencia:Number) {
-    return this.http.post<Perfil>(this.perfilUrl + "/descartarSugerencia/" +idPropietario, new Perfil(idSugerencia,"---","-",0,""));
+  public descartarSugerencia(idPropietario:Number, sugerencia:Perfil) {
+    return this.http.post<Perfil>(this.perfilUrl.concat("/descartarSugerencia/".concat(String(idPropietario))), sugerencia, httpOptions);
+  }
+
+  public aceptarSugerencia(idPropietario:Number, sugerencia:Perfil) {
+    return this.http.post<Perfil>(this.perfilUrl.concat("/aceptarSugerencia/".concat(String(idPropietario))), sugerencia, httpOptions);
   }
 
 }
