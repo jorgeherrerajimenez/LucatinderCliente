@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { Perfil } from '../model/perfil';
+import { Provincia } from '../model/provincia';
 import { Observable } from 'rxjs';
 import { stringify } from 'querystring';
 
@@ -32,6 +33,10 @@ export class PerfilService {
   }
   public getMatches(id:Number) {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + id);
+  }
+
+  public getProvincias(): Observable<Provincia[]>{
+    return this.http.get<Provincia[]>(this.perfilUrl + "/provincias");
   }
 
    //http://localhost:8080/user-portal/users/5

@@ -3,6 +3,7 @@ import { Perfil } from 'src/app/model/perfil';
 import { PerfilService } from '../../services/perfil.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Provincia } from 'src/app/model/provincia';
 
 
 @Component({
@@ -14,18 +15,19 @@ export class RegistroComponent implements OnInit {
 
 angForm: FormGroup;
 perfil: Perfil = new Perfil();
+provincias: Provincia[];
+
 
 constructor(private fb: FormBuilder,
             private perfilService: PerfilService,
             private router: Router) { 
               
-              this.createForm(this.perfil);
+            this.createForm(this.perfil);
            }
 
-ngOnInit(): void {}
+ngOnInit(): void {
 
-gotoLogin() {
-this.router.navigate(['/login']);
+this.perfilService.getProvincias().subscribe( res=> this.provincias = res );
 }
 
 createForm(perfil: Perfil){
@@ -35,11 +37,17 @@ createForm(perfil: Perfil){
       username: [this.perfil.username],
       genero: [this.perfil.genero, Validators.required],
       edad: [this.perfil.edad, [Validators.required, Validators.min(18)]],
+      nombreProvincia: [this.perfil.provincia, Validators.required],
       descripcion:[this.perfil.descripcion]
     });
+
   }
 
-              
+get nombreProvincia(){
+
+  return this.angForm.get('nombreProvincia');
+}
+
 createPerfil() {
 this.perfilService.createPerfil(this.perfil)
 .subscribe(data=> {alert("Usuario generado de forma correcta");})

@@ -41,6 +41,22 @@
     <input type="text" [(ngModel)]="perfil.genero" formControlName="genero" id="genero"> 
     </div>
 
+    <div class="form-group" id="formContent">
+        <label for="provincia">Provincia</label>
+        <select id="provincia" [(ngModel)]="perfil.provincia" formControlName="nombreProvincia" required>
+            <option [ngValue]="null" disabled>
+                Selecciona tu provincia
+            </option>
+            <option *ngFor="let ciudad of provincias" [ngValue]="ciudad.nombre"> 
+                {{ciudad.nombre}}
+            </option>
+
+        </select>
+
+         <span *ngIf="nombreProvincia.invalid">
+            Este campo es obligatorio
+         </span>
+    </div>
   
     <div class="form-group" id="formContent">
     <label for="descripcion">Descripción</label>
