@@ -37,7 +37,7 @@
     <div class="row">
     <div class="col-6 p-4" *ngFor="let perfil of listaDescartes">
         <div class="card" style="height: 100%;">  
-            <img class="card-img-top img-thumbnail" src="/assets/images/usericon.png" alt="Image Icon"> 
+            <img class="card-img-top img-thumbnail" src="/assets/images/{{perfil.image}}" alt="Image Icon"> 
             <div class="card-body">
                 <h5 class="card-title">{{perfil.nombre}}</h5>
                 <p class="card-text">{{perfil.descripcion}}</p>   

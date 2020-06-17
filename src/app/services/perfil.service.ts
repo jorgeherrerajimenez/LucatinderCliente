@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { Perfil } from '../model/perfil';
+import { Provincia } from '../model/provincia';
 import { Observable } from 'rxjs';
 import { stringify } from 'querystring';
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -33,14 +35,17 @@ export class PerfilService {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + id);
   }
 
+  public getProvincias(): Observable<Provincia[]>{
+    return this.http.get<Provincia[]>(this.perfilUrl + "/provincias");
+  }
+
    //http://localhost:8080/user-portal/users/5
    public deletePerfil(perfil:Perfil) {
-
     return this.http.delete(this.perfilUrl + "/"+ perfil.id);
   }
 
-  public createPerfil(perfil:Perfil) {
-    return this.http.post<Perfil>(this.perfilUrl , perfil.id);
+  public createPerfil(perfil:Perfil){
+    return this.http.post<Perfil>(this.perfilUrl + "/add", perfil);
   }
 
   public findByUsername(username:String){

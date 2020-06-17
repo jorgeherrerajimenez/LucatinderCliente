@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
             private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+
   }
 
   onSubmit(): void {
@@ -34,3 +35,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
