@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body style="background-color: azure; height: auto;">
 
  <!-- Menú-->
 
@@ -33,23 +33,24 @@
 </nav>
 
 
-<!-- cuadrado blanco principal-->
-<div class="limiter">
-  <div class="container-login100">
-
-      <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50" *ngFor="let perfil of matches">
-          <img class="card-img-top img-thumbnail" src="assets/images/usericon.png" alt="Image Icon">
-          <div class="card-body">
-              <h5 class="card-title" >{{perfil.nombre}}</h5>
-              <p class="card-text" >{{perfil.descripcion}}</p>
-          </div>
-          <ul class="list-group list-group-flush">
-              Edad: <li class="list-group-item" style="background-color:azure">{{perfil.edad}}</li>
-              Género: <li class="list-group-item" style="background-color:azure">{{perfil.genero}}</li>
-          </ul>
-
-      </div>
-  </div>
+  <!-- Menú-->
+  <div class="container">
+    <div class="row">
+    <div class="col-6 p-4" *ngFor="let perfil of matches">
+        <div class="card" style="height: 100%;">  
+            <img class="card-img-top img-thumbnail" src="/assets/images/usericon.png" alt="Image Icon"> 
+            <div class="card-body">
+                <h5 class="card-title">{{perfil.nombre}}</h5>
+                <p class="card-text">{{perfil.descripcion}}</p>   
+                <ul class="list-group list-group-flush">
+                    Edad: <li class="list-group-item" style="background-color:azure">{{perfil.edad}}</li>
+                    Género: <li class="list-group-item" style="background-color:azure">{{perfil.genero}}</li>
+                </ul>
+            
+            </div> 
+        </div>
+    </div>
+</div>
 </div>
 <!-- cuadrado blanco principal -->
 

@@ -19,13 +19,15 @@ export class LoginComponent implements OnInit {
             private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.perfilService.getContactos(11);
-    console.log(this.perfilService.getContactos(11))}
 
-
+  }
 
   onSubmit(): void {
-    this.perfilService.findByUsername(this.userName).subscribe(result => this.goToHome(+result.id));
+    this.perfilService.findByUsername(this.userName).subscribe((result) => {
+      localStorage.setItem('perfil',JSON.stringify(result))
+      this.goToHome(+result.id)
+    }
+    );
   }
 
   goToHome(id:Number): void {
