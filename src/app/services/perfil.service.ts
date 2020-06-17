@@ -47,6 +47,10 @@ export class PerfilService {
     return this.http.get<Perfil>(this.perfilUrl + "/" + username);
   }
 
+  public findOne(id:Number){
+    return this.http.get<Perfil>(this.perfilUrl + "/one/" + id);
+  }
+
   public descartarSugerencia(idPropietario:Number, sugerencia:Perfil) {
     return this.http.post<Perfil>(this.perfilUrl.concat("/descartarSugerencia/".concat(String(idPropietario))), sugerencia, httpOptions);
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router'
 import { Perfil } from 'src/app/model/perfil';
+import { PerfilService } from 'src/app/services/perfil.service';
 
 @Component({
   selector: 'app-home',
