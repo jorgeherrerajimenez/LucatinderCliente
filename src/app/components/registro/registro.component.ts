@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ValueProvider } from '@angular/core';
+import { Perfil } from 'src/app/model/perfil';
+import { PerfilService } from '../../services/perfil.service';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Provincia } from 'src/app/model/provincia';
+
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +13,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
+angForm: FormGroup;
+perfil: Perfil = new Perfil();
+provincias: Provincia[];
 
-  ngOnInit(): void {
+
+constructor(private fb: FormBuilder,
+            private perfilService: PerfilService,
+            private router: Router) { 
+              
+            this.createForm(this.perfil);
+           }
+
+ngOnInit(): void {
+
+this.perfilService.getProvincias().subscribe( res=> this.provincias = res );
+}
+
+createForm(perfil: Perfil){
+
+    this.angForm = this.fb.group({
+      nombre: [this.perfil.nombre, [Validators.required, Validators.minLength(3)]],
+      username: [this.perfil.username],
+      genero: [this.perfil.genero, Validators.required],
+      edad: [this.perfil.edad, [Validators.required, Validators.min(18)]],
+      nombreProvincia: [this.perfil.provincia, Validators.required],
+      descripcion:[this.perfil.descripcion]
+    });
+
   }
 
+get nombreProvincia(){
+
+  return this.angForm.get('nombreProvincia');
 }
+
+createPerfil() {
+this.perfilService.createPerfil(this.perfil)
+.subscribe(data=> {alert("Usuario generado de forma correcta");})
+}
+              
+}
+
+
+
