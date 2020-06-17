@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -17,6 +19,8 @@ import { FormsModule } from '@angular/forms';
 
 import { PerfilService } from './services/perfil.service';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,13 +30,15 @@ import { PerfilService } from './services/perfil.service';
     SugerenciasComponent,
     ContactosComponent,
     DescartesComponent,
-    MatchsComponent
+    MatchsComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule 
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [PerfilService],
   bootstrap: [AppComponent]
