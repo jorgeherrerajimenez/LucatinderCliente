@@ -15,6 +15,19 @@
       padding: 0px; 
       box-sizing: border-box;
   }
+
+  .bordercards{
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+  }
+  ​
+  .shadowcards{
+    -webkit-box-shadow: -3px 13px 46px -7px rgba(0,0,0,0.26);
+  -moz-box-shadow: -3px 13px 46px -7px rgba(0,0,0,0.26);
+  box-shadow: -3px 13px 46px -7px rgba(0,0,0,0.26);
+  }
   
   body, html {
       height: 100%;
