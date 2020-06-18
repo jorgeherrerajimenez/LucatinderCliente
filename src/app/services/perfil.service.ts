@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http'
 import { Perfil } from '../model/perfil';
 import { Observable } from 'rxjs';
 import { stringify } from 'querystring';
+import { Provincia } from '../model/provincia';
 
 
 const httpOptions = {
@@ -38,9 +39,11 @@ export class PerfilService {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + id);
   }
 
+  public getProvincias() {
+    return this.http.get<Provincia[]>(this.perfilUrl + "/provincias");
+  }
 
-   //http://localhost:8080/user-portal/users/5
-   public deletePerfil(perfil:Perfil) {
+  public deletePerfil(perfil:Perfil) {
     return this.http.delete(this.perfilUrl + "/"+ perfil.id);
   }
 
@@ -50,6 +53,10 @@ export class PerfilService {
 
   public findByUsername(username:String){
     return this.http.get<Perfil>(this.perfilUrl + "/" + username);
+  }
+
+  public findOne(id:Number){
+    return this.http.get<Perfil>(this.perfilUrl + "/one/" + id);
   }
 
   public descartarSugerencia(idPropietario:Number, sugerencia:Perfil) {
