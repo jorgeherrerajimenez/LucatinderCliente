@@ -14,7 +14,7 @@ import { Provincia } from 'src/app/model/provincia';
 export class RegistroComponent implements OnInit {
 
 angForm: FormGroup;
-perfil: Perfil = new Perfil();
+perfil: Perfil;
 provincias: Provincia[];
 
 
