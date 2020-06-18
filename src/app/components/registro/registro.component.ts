@@ -3,7 +3,6 @@ import { Perfil } from 'src/app/model/perfil';
 import { PerfilService } from '../../services/perfil.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Provincia } from 'src/app/model/provincia';
 
 
 @Component({
@@ -15,7 +14,6 @@ export class RegistroComponent implements OnInit {
 
 angForm: FormGroup;
 perfil: Perfil = new Perfil();
-provincias: Provincia[];
 
 
 constructor(private fb: FormBuilder,
@@ -25,10 +23,14 @@ constructor(private fb: FormBuilder,
             this.createForm(this.perfil);
            }
 
-ngOnInit(): void {
+ngOnInit(): void {}
 
-this.perfilService.getProvincias().subscribe( res=> this.provincias = res );
-}
+Provincia:any = ["A Coruña", "Álava","Albacete","Alicante","Almería", "Asturias", "Ávila", 
+"Badajoz", "Baleares", "Barcelona", "Burgos", "Cáceres", "Cádiz", "Cantabria", 
+"Castellón", "Ciudad Real", "Córdoba", "Cuenca", "Girona", "Granada", "Guadalajara", "Gipuzkoa", 
+"Huelva", "Huesca","Jaén", "La Rioja","Las Palmas", "León","Lérida", "Lugo", "Madrid","Málaga", 
+"Murcia", "Navarra", "Ourense", "Palencia", "Pontevedra", "Salamanca", "Segovia", "Sevilla", "Soria", 
+"Tarragona", "Santa Cruz de Tenerife", "Teruel", "Toledo", "Valencia", "Valladolid", "Bilbao","Zamora", "Zaragoza"]
 
 createForm(perfil: Perfil){
 

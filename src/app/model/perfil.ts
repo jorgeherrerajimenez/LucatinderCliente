@@ -1,4 +1,3 @@
-import { Provincia } from './provincia';
 
 export class Perfil {
     //creamos los atributos de la clase
@@ -13,13 +12,5 @@ export class Perfil {
     public image:String;
   
   
-    constructor(id: Number, nombre: string, genero: string, edad: Number, descripcion: string, image:String){
-        this.id = id;
-        this.nombre = nombre;
-        this.genero = genero;
-        this.edad = edad;
-        this.descripcion = descripcion;
-        this.image = image;
-    }
-
+  
 }

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpClientModule } from '@angular/common/http';
 import { Perfil } from '../model/perfil';
-import { Provincia } from '../model/provincia';
 import { Observable } from 'rxjs';
 import { stringify } from 'querystring';
 
@@ -19,6 +18,10 @@ export class PerfilService {
   constructor(private http:HttpClient) {}
 
   private perfilUrl = 'http://localhost:8080/rperfil';
+
+  public addPerfil(perfil:Perfil) {
+    return this.http.post<Perfil>(this.perfilUrl + "/add", perfil);
+  }
   
   public getSugerencias(id:any) {
     return this.http.get<Perfil[]>(this.perfilUrl + "/sugerencias/" + id);
@@ -35,9 +38,6 @@ export class PerfilService {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + id);
   }
 
-  public getProvincias(): Observable<Provincia[]>{
-    return this.http.get<Provincia[]>(this.perfilUrl + "/provincias");
-  }
 
    //http://localhost:8080/user-portal/users/5
    public deletePerfil(perfil:Perfil) {
