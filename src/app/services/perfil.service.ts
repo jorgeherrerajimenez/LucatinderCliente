@@ -35,12 +35,11 @@ export class PerfilService {
     return this.http.get<Perfil[]>(this.perfilUrl + "/listaMatches/" + id);
   }
 
-  public getProvincias(): Observable<Provincia[]>{
+  public getProvincias() {
     return this.http.get<Provincia[]>(this.perfilUrl + "/provincias");
   }
 
-   //http://localhost:8080/user-portal/users/5
-   public deletePerfil(perfil:Perfil) {
+  public deletePerfil(perfil:Perfil) {
     return this.http.delete(this.perfilUrl + "/"+ perfil.id);
   }
 
